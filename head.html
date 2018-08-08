@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <header class="header">
+        <form>
+            <input type="search" placeholder="酒店/目的地/景点/航班">
+        </form>
+        <div class="mine">
+            <img src="./images/icon.png" alt="我的">
+            <a href="#">我的</a>
+        </div>
+    </header>
+    <div class="banner">
+        <ul>
+            <li><img src="./images/banner01.jpg"></li>
+            <li><img src="./images/banner02.jpg"></li>
+            <li><img src="./images/banner03.jpg"></li>
+            <li><img src="./images/banner04.jpg"></li>
+            <li><img src="./images/banner05.jpg"></li>
+            <li><img src="./images/banner06.jpg"></li>
+        </ul>
+    </div>
+    <main class="main">
+        <nav class="nav">
+            <ul>
+                <li>
+                    <img src="./images/nav1.png" alt="景点.玩乐">
+                    <span>景点.玩乐</span>
+                </li>
+                <li>
+                    <img src="./images/nav2.png" alt="景点.玩乐">
+                    <span>景点.玩乐</span>
+                </li>
+                <li>
+                    <img src="./images/nav3.png" alt="景点.玩乐">
+                    <span>景点.玩乐</span>
+                </li>
+                <li>
+                    <img src="./images/nav4.png" alt="景点.玩乐">
+                    <span>景点.玩乐</span>
+                </li>
+                <li>
+                    <img src="./images/nav5.png" alt="景点.玩乐">
+                    <span>景点.玩乐</span>
+                </li>
+            </ul>
+        </nav>
+        <div class="business business1">
+            <div class="hosts">酒店</div>
+            <div class="links">
+                <a href="#">海外酒店</a>
+                <a href="#">团购</a>
+                <a href="#">特价酒店</a>
+                <a href="#">民宿.客栈</a>
+            </div>
+        </div>
+        <div class="business business2">
+            <div class="hosts">酒店</div>
+            <div class="links">
+                <a href="#">海外酒店</a>
+                <a href="#">团购</a>
+                <a href="#">特价酒店</a>
+                <a href="#">民宿.客栈</a>
+            </div>
+        </div>
+        <div class="business business3">
+            <div class="hosts">酒店</div>
+            <div class="links">
+                <a href="#">海外酒店</a>
+                <a href="#">团购</a>
+                <a href="#">特价酒店</a>
+                <a href="#">民宿.客栈</a>
+            </div>
+        </div>
+        <div class="subNav">
+            <ul>
+                <li>
+                    <img src="./images/subNav1.png" alt="">
+                    <span>wifi电话</span>
+                </li>
+                <li>
+                    <img src="./images/subNav2.png" alt="">
+                    <span>wifi电话</span>
+                </li>
+                <li>
+                    <img src="./images/subNav3.png" alt="">
+                    <span>wifi电话</span>
+                </li>
+                <li>
+                    <img src="./images/subNav4.png" alt="">
+                    <span>wifi电话</span>
+                </li>
+                <li>
+                    <img src="./images/subNav5.png" alt="">
+                    <span>wifi电话</span>
+                </li>
+                <li>
+                    <img src="./images/subNav6.png" alt="">
+                    <span>wifi电话</span>
+                </li>
+                <li>
+                    <img src="./images/subNav7.png" alt="">
+                    <span>wifi电话</span>
+                </li>
+                <li>
+                    <img src="./images/subNav8.png" alt="">
+                    <span>wifi电话</span>
+                </li>
+                <li>
+                    <img src="./images/subNav9.png" alt="">
+                    <span>wifi电话</span>
+                </li>
+                <li>
+                    <img src="./images/subNav10.png" alt="">
+                    <span>wifi电话</span>
+                </li>
+                <li>
+                    <img src="./images/subNav11.png" alt="">
+                    <span>wifi电话</span>
+                </li>
+                <li>
+                    <img src="./images/subNav12.png" alt="">
+                    <span>wifi电话</span>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var banner = document.querySelector('.banner');
+        var ul = banner.children[0];
+        var distance = 0;
+        var index = 0;
+        var sw = document.documentElement.clientWidth;
+        swrap(banner, {
+            touchLeft: function(e) {
+                if (Math.abs(distance) > sw / 2) {
+                    if (index < 5) {
+                        index++;
+                    }
+                }
+
+                ul.style.transition = 'transform .6s';
+                ul.style.transform = 'translateX(' + -index * sw + 'px)'
+            },
+            touchRight: function(e) {
+                if (Math.abs(distance) > sw / 2) {
+                    if (index > 0) {
+                        index--;
+                    }
+                }
+
+                ul.style.transition = 'transform .6s';
+                ul.style.transform = 'translateX(' + -index * sw + 'px)'
+            },
+            drap: function(e) {
+                ul.style.transition = 'none';
+                distance = e.touches[0].pageX - e.info.startX;
+                var dischance = -index * sw + distance;
+                ul.style.transform = 'translateX(' + dischance + 'px)';
+            }
+        })
+
+        function swrap(ele, sections) {
+            if (ele.nodeType && ele.nodeType == 1) {
+                var startX;
+                var startY;
+                var moveX;
+                var moveY;
+                var disX;
+                var disY;
+                var flag = false;
+                var defaults = {
+                        touchLeft: function() {},
+                        touchRight: function() {},
+                        touchDown: function() {},
+                        touchUp: function() {},
+                        drap: function() {}
+                    }
+                    //让sections对象去覆盖defaults对象,如果sections对象中没传参,则默认使用defaults中的参数
+                Object.assign(defaults, sections);
+                ele.addEventListener('touchstart', function(e) {
+                    //得到手指触碰时的水平位置
+                    startX = e.touches[0].pageX;
+                    //得到手指触碰时的垂直位置
+                    startY = e.touches[0].pageY;
+                    //得到手指触碰距离盒子边的水平距离
+                    disX = startX - this.offsetLeft;
+                    //得到手指触碰距离盒子边的垂直距离
+                    disY = startY - this.offsetTop;
+                })
+                ele.addEventListener('touchmove', function(e) {
+                    // 判断是否触发轻触事件
+                    flag = true;
+                    moveX = e.touches[0].pageX;
+                    moveY = e.touches[0].pageY;
+                    e.info = {
+                        startX: startX,
+                        startY: startY,
+                        disX: disX,
+                        disY: disY
+                    }
+                    defaults.drap.call(ele, e)
+                })
+                ele.addEventListener('touchend', function(e) {
+                    var absX = Math.abs(moveX - startX);
+                    var absY = Math.abs(moveY - startY);
+                    //判断滑动的距离,从而知道是水平滑动还是垂直滑动
+                    if (absX > absY) {
+                        // console.log('水平');
+                        if (moveX - startX > 0) {
+                            // console.log('向右');
+                            //call()改变函数内的this指向,并把事件对象当作参数传出
+                            defaults.touchRight.call(ele, e)
+                        } else {
+                            // console.log('向左');
+                            defaults.touchLeft.call(ele, e)
+                        }
+                    } else {
+                        // console.log('垂直');
+                        if (moveY - startY > 0) {
+                            // console.log('向下');
+                            defaults.touchDown.call(ele, e)
+                        } else {
+                            // console.log('向上');
+                            defaults.touchUp.call(ele, e)
+                        }
+                    }
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>

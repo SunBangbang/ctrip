@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    font-size: 12px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+input {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: #099fde;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    height: 45px;
+    background: #f6f6f6;
+    display: flex;
+    padding: 0 10px;
+    border-bottom: 1px solid#ddd;
+}
+
+.header form {
+    flex-grow: 1;
+    position: relative;
+    margin-top: 8px;
+}
+
+.header form::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 13px;
+    height: 13px;
+    background: url(../images/glass.png) no-repeat;
+    background-size: 13px 13px;
+}
+
+.header form input {
+    width: 100%;
+    height: 30px;
+    border-radius: 6px;
+    padding-left: 30px;
+    border: 1px solid #999;
+}
+
+.header .mine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.header .mine img {
+    width: 22px;
+    height: 22px;
+}
+
+.banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner ul {
+    display: flex;
+}
+
+.banner ul li {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.banner ul li img {
+    width: 100%;
+}
+
+.main {
+    width: 100%;
+    background: #ccc;
+    padding: 5px;
+}
+
+.main .nav {
+    background: #fff;
+    border-radius: 6px;
+}
+
+.main .nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.main .nav ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main .nav ul img {
+    width: 100%;
+}
+
+.main .nav ul span {
+    margin-top: 10px;
+}
+
+.business {
+    display: flex;
+    font-size: 14px;
+    color: #fff;
+}
+
+.business1 {
+    margin-top: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: linear-gradient(to right, #fa5a55, #fa9b4e);
+}
+
+.business1 .hosts {
+    background: url(../images/item1.png) no-repeat center bottom/contain;
+}
+
+.business2 {
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    background: linear-gradient(to right, #4b90ed, #53bbed);
+}
+
+.business2 .hosts {
+    background: url(../images/item2.png) no-repeat center bottom/contain;
+}
+
+.business3 {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: linear-gradient(to right, #34c2a9, #6bd459);
+}
+
+.business3 .hosts {
+    background: url(../images/item3.png) no-repeat center bottom/contain;
+}
+
+.business .hosts {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.business .links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 2;
+}
+
+.business .links a {
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    border-left: 1px solid #fff;
+}
+
+.business .links a:nth-child(-n+2) {
+    border-bottom: 1px solid #fff;
+}
+
+.subNav {
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.subNav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subNav ul li {
+    width: 16.666%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px 0;
+}
